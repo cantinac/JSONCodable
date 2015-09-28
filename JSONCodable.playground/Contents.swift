@@ -54,13 +54,13 @@ We'll add conformance to `JSONDecodable`. You may also add conformance to `JSONC
 */
 
 extension User: JSONDecodable {
-    init?(JSONDictionary: [String:AnyObject]) {
+    init?(JSONDictionary fromJSONDictionary: [String:AnyObject]) {
         do {
-            id = try JSONDictionary.decode("id")
-            name = try JSONDictionary.decode("full_name")
-            email = try JSONDictionary.decode("email")
-            company = try JSONDictionary.decode("company")
-            friends = try JSONDictionary.decode("friends")
+            id = try fromJSONDictionary.decode("id")
+            name = try fromJSONDictionary.decode("full_name")
+            email = try fromJSONDictionary.decode("email")
+            company = try fromJSONDictionary.decode("company")
+            friends = try fromJSONDictionary.decode("friends")
         }
         catch {
             return nil
@@ -69,10 +69,10 @@ extension User: JSONDecodable {
 }
 
 extension Company: JSONDecodable {
-    init?(JSONDictionary: [String:AnyObject]) {
+    init?(JSONDictionary fromJSONDictionary: [String:AnyObject]) {
         do {
-            name = try JSONDictionary.decode("name")
-            address = try JSONDictionary.decode("address")
+            name = try fromJSONDictionary.decode("name")
+            address = try fromJSONDictionary.decode("address")
         }
         catch {
             return nil

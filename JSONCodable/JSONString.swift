@@ -20,8 +20,8 @@ public extension JSONEncodable {
 }
 
 public extension JSONDecodable {
-    init?(JSONString: String) {
-        guard let data = JSONString.dataUsingEncoding(NSUTF8StringEncoding) else {
+    init?(JSONString fromJSONString: String) {
+        guard let data = fromJSONString.dataUsingEncoding(NSUTF8StringEncoding) else {
             return nil
         }
         
@@ -42,8 +42,8 @@ public extension JSONDecodable {
 }
 
 public extension Array where Element: JSONDecodable {
-    init?(JSONString: String) {
-        guard let data = JSONString.dataUsingEncoding(NSUTF8StringEncoding) else {
+    init?(JSONString fromJSONString: String) {
+        guard let data = fromJSONString.dataUsingEncoding(NSUTF8StringEncoding) else {
             return nil
         }
         

@@ -19,14 +19,14 @@ struct User {
 }
 
 extension User: JSONCodable {
-    init?(JSONDictionary: [String : AnyObject]) {
+    init?(JSONDictionary fromJSONDictionary: [String : AnyObject]) {
         do {
-            id = try JSONDictionary.decode("id")
-            name = try JSONDictionary.decode("full_name")
-            email = try JSONDictionary.decode("email")
-            company = try JSONDictionary.decode("company")
-            friends = try JSONDictionary.decode("friends")
-            website = try JSONDictionary.decode("website.url", transformer: JSONTransformers.StringToNSURL)
+            id = try fromJSONDictionary.decode("id")
+            name = try fromJSONDictionary.decode("full_name")
+            email = try fromJSONDictionary.decode("email")
+            company = try fromJSONDictionary.decode("company")
+            friends = try fromJSONDictionary.decode("friends")
+            website = try fromJSONDictionary.decode("website.url", transformer: JSONTransformers.StringToNSURL)
         }
         catch {
             print(error)

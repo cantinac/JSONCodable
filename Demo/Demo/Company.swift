@@ -15,10 +15,10 @@ struct Company {
 }
 
 extension Company: JSONCodable {
-    init?(JSONDictionary: [String : AnyObject]) {
+    init?(JSONDictionary fromJSONDictionary: [String : AnyObject]) {
         do {
-            name = try JSONDictionary.decode("name")
-            address = try JSONDictionary.decode("address")
+            name = try fromJSONDictionary.decode("name")
+            address = try fromJSONDictionary.decode("address")
         }
         catch {
             print(error)            

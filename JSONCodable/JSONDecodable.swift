@@ -48,12 +48,12 @@ public enum JSONDecodableError: ErrorType, CustomStringConvertible {
 // Dictionary -> Struct
 
 public protocol JSONDecodable {
-    init?(JSONDictionary: [String : AnyObject])
+    init?(JSONDictionary fromJSONDictionary: [String : AnyObject])
 }
 
 public extension Array where Element: JSONDecodable {
-    init(JSONArray: [AnyObject]) {
-        self.init(JSONArray.flatMap {
+    init(JSONArray fromJSONArray: [AnyObject]) {
+        self.init(fromJSONArray.flatMap {
             guard let json = $0 as? [String : AnyObject] else {
                 return nil
             }
