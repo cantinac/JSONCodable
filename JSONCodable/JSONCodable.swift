@@ -8,7 +8,7 @@
 
 // convenience protocol
 
-public protocol JSONCodable: JSONEncodable, JSONDecodable {}
+public protocol JSONTranscodable: JSONEncodable, JSONDecodable {}
 
 // JSONCompatible - valid types in JSON
 

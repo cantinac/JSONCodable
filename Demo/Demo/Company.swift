@@ -14,7 +14,7 @@ struct Company {
     var address: String?
 }
 
-extension Company: JSONCodable {
+extension Company: JSONTranscodable {
     init?(JSONDictionary fromJSONDictionary: [String : AnyObject]) {
         do {
             name = try fromJSONDictionary.decode("name")

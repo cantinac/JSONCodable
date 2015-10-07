@@ -18,7 +18,7 @@ struct User {
     var website: NSURL?
 }
 
-extension User: JSONCodable {
+extension User: JSONTranscodable {
     init?(JSONDictionary fromJSONDictionary: [String : AnyObject]) {
         do {
             id = try fromJSONDictionary.decode("id")
